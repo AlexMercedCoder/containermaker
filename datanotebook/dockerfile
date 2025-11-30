@@ -1,5 +1,5 @@
 # Use the official Python base image
-FROM python:3.9-slim
+FROM python:3.11.14
 
 # Set environment variables to avoid interactive prompts during installations
 ENV DEBIAN_FRONTEND=noninteractive
@@ -49,7 +49,8 @@ RUN pip install --no-cache-dir \
     dremio-simple-query \
     boto3 \
     s3fs \
-    minio
+    minio \
+    dremioframe 
 
 # Install notebook
 RUN pip install --no-cache-dir \
